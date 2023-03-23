@@ -1,0 +1,2 @@
+/* create key tables */ 
+DROP TABLE IF EXISTS EXAMPLE.CAR_EMISSIONS;
