@@ -10,8 +10,10 @@ requires:
 do:
 ```
     make setup-pg-container
-    #then run the test using migrate against the running container
+    # then run the test using migrate against the running container
     ./do-test.sh
+
+    # tearup/setup convenience methods are in the makefile if you wish to retry this
 ```
 
 ## expected result from tests
@@ -48,7 +50,7 @@ output:
   "url": "https://api.github.com/repos/georgewheatcroft/go-migrate-issue-large-github-source-files/contents/migrations/000002_insert_car_emissions_demo_data.down.sql?ref=master",
   "html_url": "https://github.com/georgewheatcroft/go-migrate-issue-large-github-source-files/blob/master/migrations/000002_insert_car_emissions_demo_data.down.sql",
   "git_url": "https://api.github.com/repos/georgewheatcroft/go-migrate-issue-large-github-source-files/git/blobs/0107ec0290d07ad95036ad8e37095269da405dda",
-  "download_url": "https://raw.githubusercontent.com/georgewheatcroft/go-migrate-issue-large-github-source-files/master/migrations/000002_insert_car_emissions_demo_data.down.sql?token=<REDACTED>",
+  "download_url": "https://raw.githubusercontent.com/georgewheatcroft/go-migrate-issue-large-github-source-files/master/migrations/000002_insert_car_emissions_demo_data.down.sql",
   "type": "file",
   "content": "LS1ub3Qgc3VyZSBpZiBtaWdyYXRlIHNjcmlwdGluZyBpcyB0aGUgZG9uZSB0\naGluZyBmb3IgaW5zZXJ0cyBidXQgaGV5Li4uLiAgICAKRE8gJCQKQkVHSU4K\nICAgSUYgRVhJU1RTICgKICAgICAgU0VMRUNUIEZST00gaW5mb3JtYXRpb25f\nc2NoZW1hLnRhYmxlcwogICAgICBXSEVSRSAgdGFibGVfc2NoZW1hID0gJ2V4\nYW1wbGUnCiAgICAgIEFORCAgdGFibGVfbmFtZSA9ICdjYXJfZW1pc3Npb25z\nJykgVEhFTgogICAgVFJVTkNBVEUgVEFCTEUgRVhBTVBMRS5DQVJfRU1JU1NJ\nT05TOwogICBFTkQgSUY7CkVORCAkJDsKCg==\n",
   "encoding": "base64",
@@ -74,7 +76,7 @@ output:
   "url": "https://api.github.com/repos/georgewheatcroft/go-migrate-issue-large-github-source-files/contents/migrations/000002_insert_car_emissions_demo_data.up.sql?ref=master",
   "html_url": "https://github.com/georgewheatcroft/go-migrate-issue-large-github-source-files/blob/master/migrations/000002_insert_car_emissions_demo_data.up.sql",
   "git_url": "https://api.github.com/repos/georgewheatcroft/go-migrate-issue-large-github-source-files/git/blobs/cd852976a773479f8b5529511cf891ef88b1c048",
-  "download_url": "https://raw.githubusercontent.com/georgewheatcroft/go-migrate-issue-large-github-source-files/master/migrations/000002_insert_car_emissions_demo_data.up.sql?token=<REDACTED>",
+  "download_url": "https://raw.githubusercontent.com/georgewheatcroft/go-migrate-issue-large-github-source-files/master/migrations/000002_insert_car_emissions_demo_data.up.sql",
   "type": "file",
   "content": "",
   "encoding": "none",
@@ -84,6 +86,7 @@ output:
     "html": "https://github.com/georgewheatcroft/go-migrate-issue-large-github-source-files/blob/master/migrations/000002_insert_car_emissions_demo_data.up.sql"
   }
 }
+
 ```
 the content is empty in this case. To download the content, it should be preferred to use the `Accept: application/vnd.github.v3.raw` header in the request, or make the request and use the download url that is provided
 ```bash
