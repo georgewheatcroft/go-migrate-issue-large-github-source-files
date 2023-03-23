@@ -17,12 +17,12 @@ do:
 ```
 
 ## expected result from tests
-
+```
 ...
 2023/03/21 21:09:23 Read and execute 1/u create_car_emissions_table
 2023/03/21 21:09:23 Finished 1/u create_car_emissions_table (read 14.076442875s, ran 13.365167ms)
 2023/03/21 21:09:23 error: unsupported content encoding: none
-
+```
 (it fails to run the large migration file in migrations/000002_insert_car_emissions_demo_data.up.sql)
 
 ## apparent cause
